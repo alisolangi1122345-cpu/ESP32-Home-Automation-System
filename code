@@ -1,0 +1,51 @@
+#include <BluetoothSerial.h>
+BluetoothSerial SerialBT;
+
+// Relay pins
+int relay1 = 25;  // Relay 1 IN1
+int relay2 = 26;  // Relay 2 IN2
+
+void setup() {
+  Serial.begin(9600);
+  SerialBT.begin("Bluetooth Relay System");
+
+  pinMode(relay1, OUTPUT);
+  pinMode(relay2, OUTPUT);
+
+  // Ensure both relays OFF at start (Active LOW)
+  digitalWrite(relay1, HIGH);
+  digitalWrite(relay2, HIGH);
+
+  Serial.println("Home automation project");
+}
+
+void loop() {
+  if (SerialBT.available()) {
+    char x = SerialBT.read();  // Read Bluetooth character
+    Serial.write(x);           // Echo to Serial Monitor
+
+    // Control Relay 1
+    if (x == '1') {            // Turn Relay 1 ON
+      digitalWrite(relay1, LOW);
+      SerialBT.println("Relay 1 ON");
+      Serial.println("Relay 1 ON");
+    }
+    if (x == '2') {            // Turn Relay 1 OFF
+      digitalWrite(relay1, HIGH);
+      SerialBT.println("Relay 1 OFF");
+      Serial.println("Relay 1 OFF");
+    }
+
+    // Control Relay 2
+    if (x == '3') {            // Turn Relay 2 ON
+      digitalWrite(relay2, LOW);
+      SerialBT.println("Relay 2 ON");
+      Serial.println("Relay 2 ON");
+    }
+    if (x == '4') {            // Turn Relay 2 OFF
+      digitalWrite(relay2, HIGH);
+      SerialBT.println("Relay 2 OFF");
+      Serial.println("Relay 2 OFF");
+    }
+  }
+}
