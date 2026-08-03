@@ -4,12 +4,6 @@ Control two electrical appliances wirelessly using an ESP32 and a 2-channel rela
 
 ---
 
-## 📸 Project Preview
-
-> *(Add project photos, wiring diagram, and demonstration GIF here.)*
-
----
-
 ## 🚀 Features
 
 - ✅ Control 2 AC/DC appliances
@@ -41,13 +35,11 @@ ESP32-Home-Automation-2CH-Relay
 ├── Code/
 │   └── HomeAutomation.ino
 │
-├── Images/
+├── Demo/
 │   ├── Circuit.jpg
 │   ├── Prototype.jpg
 │   └── Demo.gif
 │
-├── Diagram/
-│   └── WiringDiagram.png
 │
 ├── LICENSE
 └── README.md
@@ -98,11 +90,6 @@ ESP32-Home-Automation-2CH-Relay
 - Scheduling
 - Energy Monitoring
 
----
-
-## 📸 Demonstration
-
-*(Add your project video or GIF here.)*
 
 ---
 
